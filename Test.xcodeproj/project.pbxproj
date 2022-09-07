@@ -13,6 +13,10 @@
 		E36078A128C8A6D7008735BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E360789F28C8A6D7008735BF /* Main.storyboard */; };
 		E36078A328C8A6D8008735BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36078A228C8A6D8008735BF /* Assets.xcassets */; };
 		E36078A628C8A6D8008735BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36078A428C8A6D8008735BF /* LaunchScreen.storyboard */; };
+		E36078AE28C8C57C008735BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36078AD28C8C57C008735BF /* Model.swift */; };
+		E3706CCE28C8EB86009BC34E /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3706CCC28C8EB86009BC34E /* Test.xcdatamodeld */; };
+		E3706CD028C917C5009BC34E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3706CCF28C917C5009BC34E /* ViewModel.swift */; };
+		E3706CD228C917D5009BC34E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3706CD128C917D5009BC34E /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		E36078A228C8A6D8008735BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36078A528C8A6D8008735BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E36078A728C8A6D8008735BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36078AD28C8C57C008735BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E3706CCD28C8EB86009BC34E /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
+		E3706CCF28C917C5009BC34E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E3706CD128C917D5009BC34E /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				E360789928C8A6D7008735BF /* AppDelegate.swift */,
 				E360789B28C8A6D7008735BF /* SceneDelegate.swift */,
+				E36078AD28C8C57C008735BF /* Model.swift */,
 				E360789D28C8A6D7008735BF /* ViewController.swift */,
+				E3706CD128C917D5009BC34E /* View.swift */,
+				E3706CCF28C917C5009BC34E /* ViewModel.swift */,
 				E360789F28C8A6D7008735BF /* Main.storyboard */,
 				E36078A228C8A6D8008735BF /* Assets.xcassets */,
 				E36078A428C8A6D8008735BF /* LaunchScreen.storyboard */,
 				E36078A728C8A6D8008735BF /* Info.plist */,
+				E3706CCC28C8EB86009BC34E /* Test.xcdatamodeld */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -139,8 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E360789E28C8A6D7008735BF /* ViewController.swift in Sources */,
+				E3706CCE28C8EB86009BC34E /* Test.xcdatamodeld in Sources */,
 				E360789A28C8A6D7008735BF /* AppDelegate.swift in Sources */,
 				E360789C28C8A6D7008735BF /* SceneDelegate.swift in Sources */,
+				E3706CD028C917C5009BC34E /* ViewModel.swift in Sources */,
+				E3706CD228C917D5009BC34E /* View.swift in Sources */,
+				E36078AE28C8C57C008735BF /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +303,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ATLW64W9HF;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -315,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ATLW64W9HF;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -358,6 +374,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E3706CCC28C8EB86009BC34E /* Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E3706CCD28C8EB86009BC34E /* Test.xcdatamodel */,
+			);
+			currentVersion = E3706CCD28C8EB86009BC34E /* Test.xcdatamodel */;
+			path = Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E360788E28C8A6D7008735BF /* Project object */;
 }
