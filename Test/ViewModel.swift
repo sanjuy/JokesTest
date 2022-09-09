@@ -23,7 +23,6 @@ class JokesViewModel{
         
         var request = URLRequest(url: url,timeoutInterval: 20.0)
         request.httpMethod = "GET"
-        
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let response = response {
@@ -35,22 +34,16 @@ class JokesViewModel{
                     let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                     let json = jsonObject as! [String: String]
                     if let joke = json["joke"]{
-                        
                         DispatchQueue.main.async {
                             self.saveJokeData(joke: joke)
                         }
                         let jokeData = JokesModel.init(joke: joke)
-                        
                         self.jokesArray.count == 10 ? self.updateJokesList(jokeData: jokeData) : self.jokesArray.append(jokeData)
-                        
-                        
                         completionHandler()
                     }
-                    
                 } catch {
                     print(error)
                 }
-                
             }
         }.resume()
     }
@@ -102,8 +95,6 @@ class JokesViewModel{
         
     }
     
-    
-    
     //MARK: -- save product data -=-=-
     func saveJokeData(joke:String){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -113,7 +104,6 @@ class JokesViewModel{
         jk.setValue(joke, forKeyPath: "joke")
         do {
             try managedContext.save()
-
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -121,22 +111,18 @@ class JokesViewModel{
     
     //MARK: --  getting products data from storage  -=-=-
     func getJokesData(_ completionHandler: @escaping () -> Void) {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "JokeData")
-
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
                 let obj = JokesModel.init(joke: data.value(forKey: "joke") as! String)
-
                 if self.jokesArray.count <= 9{
                     self.jokesArray.append(obj)
                 }
             }
             completionHandler()
-            
         } catch {
             print("Failed")
         }
@@ -154,15 +140,11 @@ class JokesViewModel{
            managedContext.delete(objectToDelete)
            do{
                try managedContext.save()
-               
            }catch{
                print(error)
            }
-           
        }catch{
            print(error)
        }
-   }
-    
-    
+   }    
 }
