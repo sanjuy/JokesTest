@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     
     func startTimer() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerHandler(_:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(timerHandler(_:)), userInfo: nil, repeats: true)
     }
     
     @objc func timerHandler(_ timer: Timer) {
