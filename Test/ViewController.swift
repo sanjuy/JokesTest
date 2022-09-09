@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         jokeList?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         jokeList?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         jokeList?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
         jokeList?.dataSource = self
         jokeList?.delegate = self
         jokeList?.register(UITableViewCell.self, forCellReuseIdentifier: "JokesCell")
@@ -89,11 +88,8 @@ class ViewController: UIViewController {
             }
             
             let jokeData = JokesModel.init(joke: joke)
-            if self.jokesArray.count == 10{
-                self.updateJokesList(jokeData: jokeData)
-            }else{
-                self.jokesArray.append(jokeData)
-            }
+            
+            self.jokesArray.count == 10 ? self.updateJokesList(jokeData: jokeData) : self.jokesArray.append(jokeData)
             
             DispatchQueue.main.async {
                 self.jokeList?.reloadData()
